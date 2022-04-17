@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+
+BG PROPERTIES
+background-color
+background-image
+background-repeat - sets if/how a bg image will be repeated
+background-position - sets the starting point of a bg image
+background-size - specifies the size of a bg image
+background-attachment - specifies if a bg image scrolls with the rest of the page
+
+*/
+
+.testBg {
+  width: 400px;
+  height: 400px;
+  background-color: blue;
+  background-image: url("../images/lecture.png");
+  background-repeat: no-repeat;
+  background-position: 10px 50px; /* left top */
+  background-size: cover;
+}
+
+.parallax {
+  background-image: url("../images/cafe.jpeg");
+  /* 
+    if we don't have text, we need to set the height or nothing will show up
+    */
+  height: 100vh;
+  background-size: cover;
+  background-attachment: fixed; /* bg image will be fixed*/
+}
+
+/* SET MULTIPLE BG TO AN ELEMENT */
+
+.multipleBg {
+  height: 400px;
+  /* the first image appears on top of the second one */
+  background-image: url("../images/apple.png"), url("../images/seamless.jpeg");
+  background-repeat: no-repeat, repeat;
+  background-size: 10%, 20%;
+  background-position: right bottom, left top;
+
+  font-size: 10rem;
+  color: #aaa;
+  text-align: center;
+}
+
+/* LINEAR-GRADIENT */
+/* starts from the side */
+.gradient {
+  width: 500px;
+  height: 400px;
+  /* Default direction is top to bottom */
+  background-image: linear-gradient(blue, lightskyblue);
+  /* direction left to right */
+  background-image: linear-gradient(to right, blue, lightskyblue);
+  /* adding multiple colors */
+  background-image: linear-gradient(to right, red, orange, yellow, green, blue);
+  /* diagonal */
+  background-image: linear-gradient(
+    to bottom right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue
+  );
+}
+
+/* RADIAL-GRADIENT */
+/* starts from the center */
+
+.radial {
+  width: 500px;
+  height: 400px;
+  background-image: radial-gradient(red, yellow, green);
+  /* you can also fine tune it by setting a specific unit for the size */
+  background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+}
+
+/* FULL BACKGROUND */
+.bgFull {
+  /* background property is a shortcut */
+  background: url("../images/bgFull.jpg") fixed no-repeat center/cover;
+  /* Remember to put a / between bg-position and bg-size */
+  /* background-size: cover; */
+  font-size: 10rem;
+  opacity: 0.7;
+}
+
+/* POSITIONING */
+
+.relative {
+  background: olivedrab;
+  position: relative;
+  /* 
+        once you use the position property on an element
+        you have access to a new set of properties:
+        left, right, top, bottom
+    */
+  left: 100px;
+  width: 100px;
+}
+
+/* ABSOLUTE */
+/* Tip: always encapsulate an absolute element 
+in a parent with position relative */
+
+.relative-2 {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background: blueviolet;
+}
+
+.absolute {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  width: 150px;
+  background: orange;
+}
+
+/* STICKY */
+/*
+   Sticky - It behaves like position relative..but when you scroll it sticks in place.
+   In order for it to work you should specify at least one position (top/bottom/left/right)
+   and when the scroll takes you past that position, the sticky effect will take place.
+   It is not supported on IE11         
+*/
+
+.stickybox {
+  width: 50%;
+  height: 150px;
+  background: lightblue;
+  overflow: scroll;
+  margin: 1rem;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  background: lightsalmon;
+  padding: 1rem;
+}
+
+/* FIXED */
+/*
+    Fixed - It gets positioned based on viewport. 
+    Fixed elements stay in the same place when you scroll
+*/
+
+.fixed {
+  position: fixed;
+  background: lime;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+}
